@@ -18,11 +18,6 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
-
   "content_scripts": [
     {
     "all_frames": false,
@@ -36,5 +31,9 @@
         "static/css/style.css"
       ]
     }
-  ]
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
