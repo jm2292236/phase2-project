@@ -5,10 +5,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -17,6 +13,8 @@ function App() {
         >
           Learn React
         </a>
+
+        <h1>Phase 2 Project is Live!</h1>
       </header>
     </div>
   );
