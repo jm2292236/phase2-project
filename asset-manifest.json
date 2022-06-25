@@ -1,13 +1,10 @@
 {
   "files": {
-    "main.css": "/github.io/phase2-project/static/css/main.073c9b0a.css",
     "main.js": "/github.io/phase2-project/static/js/main.5b81e43f.js",
     "index.html": "/github.io/phase2-project/index.html",
-    "main.073c9b0a.css.map": "/github.io/phase2-project/static/css/main.073c9b0a.css.map",
     "main.5b81e43f.js.map": "/github.io/phase2-project/static/js/main.5b81e43f.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
     "static/js/main.5b81e43f.js"
   ]
 }
