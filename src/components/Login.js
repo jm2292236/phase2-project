@@ -1,17 +1,21 @@
 import React, { useState } from 'react'
 
 function Login({onSubmit}) {
-    const [userName, setUserName] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     function handleSubmit(e) {
         e.preventDefault() ;
 
         const credentials = {
-            userName,
+            email,
             password,
           };
       
+          // Reset credentials to be empty in case they are incorrect
+          setEmail("");
+          setPassword("");
+
           // Check that user input is good by sending 
           // request to the backend and **authenticating user**
           onSubmit(credentials)
@@ -22,7 +26,7 @@ function Login({onSubmit}) {
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <input type="text" name="userName" value={userName} onChange={(e) => setUserName(e.target.value)} placeholder="User name" required/>
+                    <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required/>
                 </div>
 
                 <div>

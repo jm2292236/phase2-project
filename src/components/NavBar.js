@@ -3,15 +3,15 @@ import { NavLink } from "react-router-dom";
 
 const linkStyles = {
     display: "inline-block",
-    width: "70px",
+    width: "120px",
     padding: "12px",
     margin: "0 6px 6px",
-    background: "blue",
+    background: "darkgoldenrod",
     textDecoration: "none",
     color: "white",
 };
 
-function NavBar() {
+function NavBar({currentUser}) {
     return (
         <div>
             <NavLink
@@ -36,24 +36,17 @@ function NavBar() {
             </NavLink>
 
             <NavLink
-                to="/profile"
-                style={linkStyles}
-            >
-                Profile
-            </NavLink>
-
-            <NavLink
-                to="/propertiesList"
+                to="/propertyList"
                 style={linkStyles}
             >
                 Properties List
             </NavLink>
 
             <NavLink
-                to="/interestList"
+                to="/investmentForm"
                 style={linkStyles}
             >
-                Interest List
+                Investment Form
             </NavLink>
 
             <NavLink
@@ -69,6 +62,14 @@ function NavBar() {
             >
                 About
             </NavLink>
+
+            <NavLink
+                to="/profile"
+                style={linkStyles}
+            >
+                {currentUser.email ? <h3>Hello, {currentUser.fullName}</h3> : "Profile"}
+            </NavLink>
+
         </div>
     )
 }
