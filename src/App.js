@@ -17,21 +17,18 @@ function App() {
     const [currentUser, setCurrentUser] = useState({});
     let navigate = useNavigate();
 
-    // Get users from db after loading the app
-    useEffect(() => {
+    function handleUserLogin(credentials) {
         fetch("http://localhost:3002/users")
         .then(response => response.json())
-        .then(data => setUsers(data));
-    }, []);
-
-    function handleUserLogin(credentials) {
-        const findUser = users.find(user => (user.email === credentials.email && user.pwd === credentials.password));
-        if (findUser) {
-            setCurrentUser(findUser);
-            navigate("/portfolio");
-        } else {
-            alert("Email or password is incorrect! Try again.")
-        }
+        .then(users => {
+            const findUser = users.find(user => (user.email === credentials.email && user.pwd === credentials.password));
+            if (findUser) {
+                setCurrentUser(findUser);
+                navigate("/portfolio");
+            } else {
+                alert("Email or password is incorrect! Try again.")
+            }
+        });
     }
 
     return (
