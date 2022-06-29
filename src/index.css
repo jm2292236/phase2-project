@@ -4,3 +4,15 @@ img {
     padding: 12px;
     margin: 0 6px 6px;
 }
+
+form {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: auto 1fr;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.submitButton {
+    grid-column: span 2;
+}

@@ -25,15 +25,30 @@ function Login({onSubmit}) {
         <div>
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
-                <div>
-                    <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required/>
-                </div>
+                <label for="email">Email:</label>
+                <input 
+                    autoFocus
+                    type="text" 
+                    id="email"
+                    name="email" 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                    placeholder="Email" 
+                    required
+                />
 
-                <div>
-                    <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
-                </div>
+                <label for="password">Password:</label>
+                <input 
+                    type="password" 
+                    id="password"
+                    name="password" 
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                    placeholder="Password" 
+                    required 
+                />
 
-                <input type="submit" value="Submit" />
+                <input className="submitButton" type="submit" value="Submit" />
             </form>
         </div>
     )

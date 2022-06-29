@@ -44,31 +44,37 @@ function Signup() {
         <div>
             <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
-                <div>
-                    <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="First name" required/>
-                </div>
+                {/* <div> */}
+                    <label for="firstName">First name:</label>
+                    <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="First name" required/>
+                {/* </div> */}
 
-                <div>
-                    <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Last name" required/>
-                </div>
+                {/* <div> */}
+                    <label for="lastName">Last name:</label>
+                    <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Last name" required/>
+                {/* </div> */}
 
-                <div>
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" required/>
-                </div>
+                {/* <div> */}
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" required/>
+                {/* </div> */}
 
-                <div>
-                    <input type="password" name="pwd" value={formData.pwd} onChange={handleChange} placeholder="Password" required/>
-                </div>
+                {/* <div> */}
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="pwd" value={formData.pwd} onChange={handleChange} placeholder="Password" required/>
+                {/* </div> */}
 
-                <div>
-                    <input type="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone" required/>
-                </div>
+                {/* <div> */}
+                    <label for="phone">Phone:</label>
+                    <input type="phone" id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone" required/>
+                {/* </div> */}
 
-                <div>
-                    <input type="number" name="bankAccount" value={formData.bankAccount} onChange={handleChange} placeholder="Bank account" />
-                </div>
+                {/* <div> */}
+                    <label for="bankAccount">Bank account:</label>
+                    <input type="number" id="bankAccount" name="bankAccount" value={formData.bankAccount} onChange={handleChange} placeholder="Bank account" />
+                {/* </div> */}
 
-                <input type="submit" value="Submit" />
+                <input className="submitButton" type="submit" value="Submit" />
             </form>
         </div>
     )
