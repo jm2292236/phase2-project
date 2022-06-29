@@ -14,7 +14,11 @@ function PropertyList({currentUser}) {
     
     const propertiesToDisplay = properties.map(property => {
         return (
-            <PropertyForm key={property.id} property={property}/>
+            <PropertyForm 
+                key={property.id} 
+                currentUser={currentUser} 
+                property={property}
+            />
         )
     });
 

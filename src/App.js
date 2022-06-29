@@ -42,10 +42,9 @@ function App() {
                 <Route path="/" element={<Home currentUser={currentUser}/>} ></Route>
                 <Route path="/login" element={<Login onSubmit={handleUserLogin}/>} ></Route>
                 <Route path="/signup" element={<Signup />} ></Route>
-                <Route path="/profile" element={<Profile />} ></Route>
-                <Route path="/propertyList" element={<PropertyList currentUser={currentUser}/>} ></Route>
-                <Route path="/propertyForm" element={<PropertyForm />} ></Route>
-                <Route path="/portfolio" element={<Portfolio />} ></Route>
+                <Route path="/portfolio" element={<Portfolio currentUser={currentUser}/>} ></Route>
+                <Route path="/properties" element={<PropertyList currentUser={currentUser}/>} ></Route>
+                <Route path="/profile" element={<Profile currentUser={currentUser}/>} ></Route>
                 <Route path="/about" element={<About />} ></Route>
             </Routes>
         </div>

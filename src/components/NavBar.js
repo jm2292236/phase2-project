@@ -21,22 +21,28 @@ function NavBar({currentUser}) {
                 Home
             </NavLink>
 
-            <NavLink
-                to="/login"
-                style={linkStyles}
-            >
-                Login
-            </NavLink>
+            {!currentUser.email ?
+            <>
+                <NavLink
+                    to="/login"
+                    style={linkStyles}
+                >
+                    Login
+                </NavLink>
+
+                <NavLink
+                    to="/signup"
+                    style={linkStyles}
+                >
+                    Sign Up
+                </NavLink>
+            </>
+                :
+                ""
+            }
 
             <NavLink
-                to="/signup"
-                style={linkStyles}
-            >
-                Sign Up
-            </NavLink>
-
-            <NavLink
-                to="/propertyList"
+                to="/properties"
                 style={linkStyles}
             >
                 Properties List
@@ -67,7 +73,7 @@ function NavBar({currentUser}) {
                 to="/profile"
                 style={linkStyles}
             >
-                {currentUser.email ? <h3>Hello, {currentUser.fullName}</h3> : "Profile"}
+                {currentUser.email ? <h3>Hello, {currentUser.firstName}</h3> : "Profile"}
             </NavLink>
 
         </div>
