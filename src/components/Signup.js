@@ -45,32 +45,32 @@ function Signup() {
             <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
                 {/* <div> */}
-                    <label for="firstName">First name:</label>
+                    <label htmlFor="firstName">First name:</label>
                     <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="First name" required/>
                 {/* </div> */}
 
                 {/* <div> */}
-                    <label for="lastName">Last name:</label>
+                    <label htmlFor="lastName">Last name:</label>
                     <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Last name" required/>
                 {/* </div> */}
 
                 {/* <div> */}
-                    <label for="email">Email:</label>
+                    <label htmlFor="email">Email:</label>
                     <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" required/>
                 {/* </div> */}
 
                 {/* <div> */}
-                    <label for="password">Password:</label>
+                    <label htmlFor="password">Password:</label>
                     <input type="password" id="password" name="pwd" value={formData.pwd} onChange={handleChange} placeholder="Password" required/>
                 {/* </div> */}
 
                 {/* <div> */}
-                    <label for="phone">Phone:</label>
+                    <label htmlFor="phone">Phone:</label>
                     <input type="phone" id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone" required/>
                 {/* </div> */}
 
                 {/* <div> */}
-                    <label for="bankAccount">Bank account:</label>
+                    <label htmlFor="bankAccount">Bank account:</label>
                     <input type="number" id="bankAccount" name="bankAccount" value={formData.bankAccount} onChange={handleChange} placeholder="Bank account" />
                 {/* </div> */}
 

@@ -22,7 +22,7 @@ function PropertyForm({currentUser, property}) {
             <p>{`(user ID: ${currentUser.id} prop ID: ${property.id})`}</p>
             <h1>{property.address}</h1>
             {userActive ? 
-                <button onClick={() => handleInterestList(property.id)}>Add to Interest List</button>
+                <button onClick={() => handleInterestList(property.id)}>{property.interest ? "Remove from InterestList" : "Add to Interest List"}</button>
                 : ""
             }
             <h4>{`BED: ${property.bed}  BATH: ${property.bath}  SQ FT: ${property.sqft}  YEAR BUILT: ${property.yearBuilt}`}</h4>

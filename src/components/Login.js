@@ -25,7 +25,7 @@ function Login({onSubmit}) {
         <div>
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
-                <label for="email">Email:</label>
+                <label htmlFor="email">Email:</label>
                 <input 
                     autoFocus
                     type="text" 
@@ -37,7 +37,7 @@ function Login({onSubmit}) {
                     required
                 />
 
-                <label for="password">Password:</label>
+                <label htmlFor="password">Password:</label>
                 <input 
                     type="password" 
                     id="password"
