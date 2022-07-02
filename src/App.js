@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
@@ -8,7 +9,6 @@ import Signup from "./components/Signup";
 import About from "./components/About";
 import Profile from "./components/Profile";
 import PropertyList from "./components/PropertyList";
-import PropertyForm from "./components/PropertyForm";
 import Portfolio from "./components/Portfolio";
 
 

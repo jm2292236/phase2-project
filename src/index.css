@@ -1,9 +1,21 @@
+* {
+    font-family: Geneva, Tahoma, sans-serif
+}
+
+.NavBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+}
+
+
 img {
-    /* display: inline-block, */
-    width: 40rem;
+    width: 20rem;
     padding: 12px;
     margin: 0 6px 6px;
+    border-radius: 8%;
 }
+
 
 form {
     display: grid;
@@ -13,6 +25,78 @@ form {
     margin: 0 auto;
 }
 
+
+.property-list {
+    display: grid;
+    gap: 1rem;
+    padding-left: 2px;
+    padding-right: 2px;
+    height: 38rem;
+    overflow-y: scroll;
+
+    width: 100%;
+    /* text-align: center; */
+
+    background-color: #1f1c32;
+    color: white;
+}
+
+
+.property-card {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+
+.base-card {
+    text-align: center;
+    border: solid;
+}
+
+
+.card-details {
+    width: auto;
+    border: solid;
+}
+
+
+.form-data {
+    display: grid;
+    justify-items: center;
+}    
+
+
+.no-edit {
+    background-color: silver;
+}
+
+
 .submitButton {
     grid-column: span 2;
+    background: #1f1c32;
+    color: white;
+}
+
+
+/* LOGO */
+.logo {
+    background-color: #1f1c32;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    text-align: center;
+    color: white;
+    border-radius: 5%;
+}
+  
+.logo span {
+    font-size: 5vw;
+    font-weight: 800;
+    text-shadow: -0.08em 0.03em 0.12em rgba(0, 0, 0, 0.9);
+}
+  
+.logo span:not(:first-child) {
+    margin-left: -0.23em;
 }

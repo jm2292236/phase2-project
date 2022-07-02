@@ -4,16 +4,18 @@ import { NavLink } from "react-router-dom";
 const linkStyles = {
     display: "inline-block",
     width: "120px",
+    borderRadius: "5%",
     padding: "12px",
     margin: "0 6px 6px",
-    background: "darkgoldenrod",
+    background: "#1f1c32",
     textDecoration: "none",
     color: "white",
+    textAlign: "center"
 };
 
 function NavBar({currentUser}) {
     return (
-        <div>
+        <div className='NavBar'>
             <NavLink
                 to="/"
                 style={linkStyles}
@@ -45,14 +47,7 @@ function NavBar({currentUser}) {
                 to="/properties"
                 style={linkStyles}
             >
-                Properties List
-            </NavLink>
-
-            <NavLink
-                to="/investmentForm"
-                style={linkStyles}
-            >
-                Investment Form
+                Properties
             </NavLink>
 
             <NavLink
