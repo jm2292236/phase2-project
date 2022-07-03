@@ -68,7 +68,7 @@ function NavBar({currentUser}) {
                 to="/profile"
                 style={linkStyles}
             >
-                {currentUser.email ? <h3>Hello, {currentUser.firstName}</h3> : "Profile"}
+                {currentUser.email ? `Hello, ${currentUser.firstName}` : "Profile"}
             </NavLink>
 
         </div>
