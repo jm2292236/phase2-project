@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 
+import PropertyBasic from './PropertyBasic';
+import InvestForm from './InvestForm';
 
 function PropertyCard({currentUser, property}) {
-    const userActive = currentUser.id;
     const [sharesToBuy, setSharesToBuy] = useState(1);
     const [myShares, setMyShares] = useState(property.sharesOwned);
 
 
     function handleSetSharesToBuyOnChange(e) {
+        // Validate no negative values or more than available shares
+        const value = parseInt(e.target.value);
+        if (value < 1 || value > property.availableShares) return;
+
         setSharesToBuy(e.target.value)
     }
 
@@ -35,9 +40,11 @@ function PropertyCard({currentUser, property}) {
     return (
         <div className='property-card'>
             <div className='base-card'>
-                <img src={property.image}></img>
-                <p>{`(user ID: ${currentUser.id} prop ID: ${property.id})`}</p>
-                <h4>{`${property.city}, ${property.state}`}</h4>
+                <PropertyBasic 
+                    image={property.image} 
+                    city={property.city}
+                    state={property.state}
+                />
             </div>
 
             <div className='card-details'>
@@ -55,16 +62,11 @@ function PropertyCard({currentUser, property}) {
                 <h4>{`MY SHARES ${myShares}`}</h4>
             </div>
             <div>
-                <form onSubmit={onSubmit}>
-                    <label htmlFor="sharesToBuy">Shares to buy:</label>
-                    <input 
-                        type="number" min="1" step="1"
-                        id="shareToBuy" 
-                        name="sharesToBuy" 
-                        value={sharesToBuy}
-                        onChange={handleSetSharesToBuyOnChange}>
-                    </input>
-                </form>
+                <InvestForm 
+                    onSubmit={onSubmit} 
+                    onChange={handleSetSharesToBuyOnChange} 
+                    sharesToBuy={sharesToBuy}
+                />
             </div>
         </div>
     )
