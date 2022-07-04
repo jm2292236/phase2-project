@@ -22,7 +22,7 @@ function Login({onSubmit}) {
     }
 
     return (
-        <div className='form-data'>
+        <div>
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="email">Email:</label>

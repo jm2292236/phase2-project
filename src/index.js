@@ -6,6 +6,8 @@ import { BrowserRouter } from "react-router-dom";
 import App from './App';
 import './index.css';
 
+document.title = "RE Invest!";
+
 ReactDOM.render(
     <BrowserRouter>
         <App />

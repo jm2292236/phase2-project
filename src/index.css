@@ -4,20 +4,19 @@
 
 .NavBar {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(9, 1fr);
     justify-content: center;
 }
 
 
 img {
     width: 20rem;
-    padding: 12px;
-    margin: 0 6px 6px;
+    padding: 8px;
     border-radius: 8%;
 }
 
 
-form {
+form {    
     display: grid;
     gap: .5rem;
     grid-template-columns: auto 1fr;
@@ -29,13 +28,11 @@ form {
 .property-list {
     display: grid;
     gap: 1rem;
-    padding-left: 2px;
-    padding-right: 2px;
+    /* padding-left: 2px; */
+    /* padding-right: 2px; */
     height: 38rem;
     overflow-y: scroll;
-
     width: 100%;
-    /* text-align: center; */
 
     background-color: #1f1c32;
     color: white;
@@ -50,20 +47,14 @@ form {
 
 .base-card {
     text-align: center;
-    border: solid;
+    /* border: solid; */
 }
 
 
 .card-details {
     width: auto;
-    border: solid;
+    /* border: solid; */
 }
-
-
-.form-data {
-    display: grid;
-    justify-items: center;
-}    
 
 
 .no-edit {
@@ -74,6 +65,33 @@ form {
 .submitButton {
     grid-column: span 2;
     background: #1f1c32;
+    color: white;
+}
+
+.portfolio-view {
+    display: grid;
+    grid-template-areas: 
+        'totals'
+        'cards';
+}
+
+.portfolio-totals {
+    grid-area: totals;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    gap: 1rem;
+    
+    background-color: #1f1c32;
+    color: white;
+}
+
+.portfolio-cards {
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    background-color: #1f1c32;
     color: white;
 }
 

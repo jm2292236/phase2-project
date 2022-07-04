@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import PropertyBasic from './PropertyBasic';
 import InvestForm from './InvestForm';
 
-function PropertyCard({currentUser, property}) {
+function PropertyCard({currentUser, property, invest = true}) {
     const [sharesToBuy, setSharesToBuy] = useState(1);
     const [myShares, setMyShares] = useState(property.sharesOwned);
 
@@ -39,7 +39,7 @@ function PropertyCard({currentUser, property}) {
 
     return (
         <div className='property-card'>
-            <div className='base-card'>
+            <div>
                 <PropertyBasic 
                     image={property.image} 
                     city={property.city}
@@ -60,13 +60,15 @@ function PropertyCard({currentUser, property}) {
                 <h4>{`SHARE PRICE ${property.sharePrice}`}</h4>
                 <h4>{`AVAILABLE SHARES ${property.availableShares}`}</h4>
                 <h4>{`MY SHARES ${myShares}`}</h4>
-            </div>
-            <div>
-                <InvestForm 
-                    onSubmit={onSubmit} 
-                    onChange={handleSetSharesToBuyOnChange} 
-                    sharesToBuy={sharesToBuy}
-                />
+            
+                {invest && 
+                <div>
+                    <InvestForm 
+                        onSubmit={onSubmit} 
+                        onChange={handleSetSharesToBuyOnChange} 
+                        sharesToBuy={sharesToBuy}
+                        />
+                </div>}
             </div>
         </div>
     )
