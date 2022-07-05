@@ -7,13 +7,13 @@ function InvestForm({onSubmit, onChange, sharesToBuy}) {
                 <label htmlFor="sharesToBuy">Shares to buy:</label>
                 <input 
                     type="number" min="1" step="1"
-                    id="sharesToBuy" 
-                    name="sharesToBuy" 
+                    id="sharesToBuy"
+                    name="sharesToBuy"
                     value={sharesToBuy}
                     onChange={onChange}>
                 </input>
 
-                <input type="submit" value="Buy" />
+                <input className='elem-col-span-2' type="submit" value="Buy" />
             </form>
         </div>
     )

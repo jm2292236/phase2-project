@@ -38,7 +38,7 @@ function Portfolio(currentUser) {
             <div className='portfolio-totals'>
                 <h1>Total Investment</h1>
                 <h1>Property Count</h1>
-                <h1>{totalInvestment.toLocaleString('en-US')}</h1>
+                <h1>${totalInvestment.toLocaleString('en-US')}</h1>
                 <h1>{propertyCount}</h1>
             </div>
 

@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import PropertyBasic from './PropertyBasic';
 import InvestForm from './InvestForm';
 
-function PropertyCard({currentUser, property, invest = true}) {
+function PropertyCard({currentUser, property}) {
     const [sharesToBuy, setSharesToBuy] = useState(1);
     const [myShares, setMyShares] = useState(property.sharesOwned);
-
+    const investEnabled = currentUser.id && currentUser.bankAccount !== "";
 
     function handleSetSharesToBuyOnChange(e) {
         // Validate no negative values or more than available shares
@@ -20,6 +20,7 @@ function PropertyCard({currentUser, property, invest = true}) {
     function onSubmit(e) {
         e.preventDefault();
 
+        // Update number of shares owned and available
         fetch(`http://localhost:3002/properties/${property.id}`, {
             method: "PATCH",
             headers: {
@@ -30,7 +31,6 @@ function PropertyCard({currentUser, property, invest = true}) {
                 sharesOwned: myShares + parseInt(sharesToBuy)
             }),
         });
-        console.log("Shares bought");
 
         // Update state
         setMyShares(myShares => myShares + parseInt(sharesToBuy));
@@ -48,26 +48,44 @@ function PropertyCard({currentUser, property, invest = true}) {
             </div>
 
             <div className='card-details'>
-                <h4>{property.address}</h4>
-                <h4>{`BED ${property.bed}`}</h4>
-                <h4>{`BATH ${property.bath}`}</h4>
-                <h4>{`SQ FT ${property.sqft}`}</h4>
-                <h4>{`YEAR BUILT ${property.yearBuilt}`}</h4>
-                <h4>{`PURCHASE PRICE ${property.purchasePrice}`}</h4>
-                <h4>{`MONTHLY RENT ${property.monthlyRent}`}</h4>
-                <h4>{`${property.description}`}</h4>
-                <h4>{`SHARES ${property.shares}`}</h4>
-                <h4>{`SHARE PRICE ${property.sharePrice}`}</h4>
-                <h4>{`AVAILABLE SHARES ${property.availableShares}`}</h4>
-                <h4>{`MY SHARES ${myShares}`}</h4>
+                <h4 className='elem-col-span-4'>{property.address}</h4>
+
+                <h4>BED</h4>
+                <h4>BATH</h4>
+                <h4>SQ FT</h4>
+                <h4>YEAR BUILT</h4> 
+                <p>{property.bed}</p>
+                <p>{property.bath}</p>
+                <p>{property.sqft.toLocaleString('en-US')}</p>
+                <p>{property.yearBuilt}</p>
+
+                <h4 className='elem-col-span-2'>PURCHASE PRICE</h4>
+                <h4 className='elem-col-span-2'>MONTHLY RENT</h4>
+                <p className='elem-col-span-2'>{property.purchasePrice.toLocaleString('en-US')}</p>
+                <p className='elem-col-span-2'>{property.monthlyRent.toLocaleString('en-US')}</p>
+
+                <h4 className='elem-col-span-4'>{`${property.description}`}</h4>
+
+                <h4>SHARES</h4>
+                <h4>SHARE PRICE</h4>
+                <h4>AVAILABLE SHARES</h4>
+                <h4>SHARES OWNED</h4>
+                <p>{property.shares}</p>
+                <p>{property.sharePrice.toLocaleString('en-US')}</p>
+                <p>{property.availableShares}</p>
+                <p>{myShares.toLocaleString('en-US')}</p>
             
-                {invest && 
+                {investEnabled ?
                 <div>
                     <InvestForm 
                         onSubmit={onSubmit} 
                         onChange={handleSetSharesToBuyOnChange} 
                         sharesToBuy={sharesToBuy}
                         />
+                </div>
+                :
+                <div className='elem-col-span-4' style={{color: "magenta"}}>
+                    Unable to invest. Please go to your profile and provide a Bank Account
                 </div>}
             </div>
         </div>

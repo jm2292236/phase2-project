@@ -28,8 +28,6 @@ form {
 .property-list {
     display: grid;
     gap: 1rem;
-    /* padding-left: 2px; */
-    /* padding-right: 2px; */
     height: 38rem;
     overflow-y: scroll;
     width: 100%;
@@ -47,13 +45,21 @@ form {
 
 .base-card {
     text-align: center;
-    /* border: solid; */
 }
 
+.elem-col-span-4 {
+    grid-column: span 4;
+}
+
+.elem-col-span-2 {
+    grid-column: span 2;
+}
 
 .card-details {
     width: auto;
-    /* border: solid; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
 }
 
 
@@ -80,7 +86,6 @@ form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: center;
-    gap: 1rem;
     
     background-color: #1f1c32;
     color: white;
@@ -93,6 +98,20 @@ form {
 
     background-color: #1f1c32;
     color: white;
+}
+
+.about-main {
+    display: grid;
+    grid-template-rows: 1fr;
+    place-items: center;
+    font-family: Apercu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.167;
+}
+
+.about-main span {
+    color: rgb(0, 197, 241);
 }
 
 
